@@ -17,7 +17,7 @@ headers: {
 headers: {          
 'Authorization': 'Bearer '+jwt_token.data.access_token   
 }    });    
-const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud:443/screenedcandidates/api/screen/screeningAI');  
+const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud/candhun/api/huncan/getChannel');  
 res.send(response.data)} catch (error) {    console.log(error);}
         });
         
