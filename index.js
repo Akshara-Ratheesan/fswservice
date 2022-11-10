@@ -17,10 +17,12 @@ app.get('/getChannel',async (req,res) => {
                         }    
                 }    );    
                 let jobProf = req.query.jobProfile;
+                let loc = req.query.location;
                 let config = {
                         headers: { 'Authorization': 'Bearer ' + jwt_token.data.access_token },
                         params: {
-                            jobProfile: jobProf
+                            jobProfile: jobProf,
+                            location:loc
                         }
                     }
                 const axiosInstance = axios.create({  
