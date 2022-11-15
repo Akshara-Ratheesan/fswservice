@@ -31,7 +31,10 @@ app.get('/getChannel',async (req,res) => {
                         }   
                  });    
                 const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud/candhun/api/huncan/getChannel',config);  
-                res.send(response.data)
+                var api_response = {
+                    "channels":response.data
+                }
+                res.send(api_response)
         } 
         catch (error) {    console.log(error);}
 });
@@ -58,10 +61,8 @@ app.get('/postJob',async (req,res) => {
                         }
                  });
                 const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud/jobpost/api/jobs/postJob',config);
-                var api_response = {
-                    "channels":response.data
-                }
-                res.send(api_response)
+                
+                res.send(response.data)
         }
         catch (error) {    console.log(error);}
 });
