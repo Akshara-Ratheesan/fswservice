@@ -58,7 +58,10 @@ app.get('/postJob',async (req,res) => {
                         }
                  });
                 const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud/jobpost/api/jobs/postJob',config);
-                res.send(response.data)
+                var api_response = {
+                    "channels":response.data
+                }
+                res.send(api_response)
         }
         catch (error) {    console.log(error);}
 });
