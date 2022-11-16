@@ -2,8 +2,6 @@ var express = require("express"); //requiring express module
 var app = express(); //creating express instance
 var querystring = require('querystring');
 const axios = require('axios');
-const swaggerUi = require('swagger-ui-express')
-const swaggerFile = require('./swagger_output.json')
 const host = '0.0.0.0';
 const PORT = process.env.PORT || 5000;
 var cors = require('cors')
@@ -13,7 +11,6 @@ var data = querystring.stringify({
         client_id: "watson-orchestrate",    
         client_secret:"ca81109d-312d-4ed3-9cf0-19398e26ea9d"
  });
-app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 app.get('/getChannel',async (req,res) => {
         try { 
