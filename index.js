@@ -2,6 +2,8 @@ var express = require("express"); //requiring express module
 var app = express(); //creating express instance
 var querystring = require('querystring');
 const axios = require('axios');
+var cores =require('cores');
+app.use(cores());
 const PORT = process.env.PORT || 5000;
 var data = querystring.stringify({
         grant_type: "client_credentials",    
