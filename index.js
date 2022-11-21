@@ -36,7 +36,7 @@ app.get('/getChannel',async (req,res) => {
                  });    
                 const response = await axiosInstance.get('https://education-dev.apps.openshift-01.knowis.cloud/candhun/api/huncan/getChannel',config);  
                 var api_response = {
-                    "channels":response.data
+                    "instances":response.data
                 }
                 res.send(api_response)
         } 
